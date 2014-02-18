@@ -1,0 +1,26 @@
+Para próxima aula:
+
+1.º trabalho
+
+Apresentação do dia 10/02
+- Nome do Jogo
+- Enredo
+- Objetivos
+- Diagrama de navegação
+- Conjunto de caixas interligadas com o nome de cada tela que o jogo vai ter
+- Objetivos específicos
+- Regras do jogo
+- Vidas
+- Pontos
+- Como o jogo acaba
+
+2.º trabalho
+Transformar a sua versão digital de 03/02 para uma versão válida no Corona
+- Background
+- 1 elemento que possa ser movido
+
+3.º trabalho
+- Apresentar um tutorial publicado do Corona
+
+
+Enredo:A Galinha 'Cocôta' coloca os ovos, e você , o fazendeiro esperto vai achar o melhor caminho para os ovos ficarem no ninho. Durante o percurso existem perigos que você enfrentará, areia movediça, espinhos, até mesmo o porco 'Fussão'. E também contará com a ajuda do sol e das flores. Elas ajudam a secar a areia movediça e a enganar o porco 'Fussão'. Muito cuidado para não estourar os ovos. Ganhe vidas e pontos extras pela agilidade e inteligência. Deixe a 'Cocôta' feliz.

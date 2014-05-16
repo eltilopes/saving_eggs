@@ -11,7 +11,6 @@ images ={
 	{ getFile = "novasImagens/check.png", types = "done"}
 }
 
-
 local function buttonHit(event)
 	storyboard.gotoScene ( event.target.destination, {effect = "slideUp"} )	
 	print( event.target.destination)
@@ -31,8 +30,7 @@ function scene:createScene( event )
 	background:setReferencePoint( display.TopLeftReferencePoint )
 	background.x, background.y = 0, 0
 	group:insert( background )
-	print(numeroFase)
-	print(scoreFase)
+
 	local levelIndex =0
 		for i=0,1 do
 			for j=1,3 do
@@ -57,18 +55,15 @@ function scene:createScene( event )
 						end
  end
 	
-end
-	
-	
+end	
 	        
-	local backBtn = display.newText(  "< Back", 0, 0, font, 20 )
+	local backBtn = display.newImageRect ("novasImagens/setaAzul.gif", 70, 70 )
 	backBtn:setReferencePoint( display.CenterReferencePoint )
-	backBtn.x = display.contentWidth*0.5
-	backBtn.y = display.contentHeight*0.75
+	backBtn.x = display.contentWidth*0.2
+	backBtn.y = display.contentHeight*0.9
 	backBtn.destination = "menu" 
 	backBtn:addEventListener("tap", buttonHit)
-	
-	group:insert(backBtn)
+	group:insert( backBtn )
 
 end
 

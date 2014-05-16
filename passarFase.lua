@@ -22,44 +22,46 @@ function scene:createScene( event )
 	
 	local group = self.view
 
+
+	function novaEstrela(x,y)
+		local estrela = display.newImageRect( "novasImagens/star.png", 60, 60 )
+		estrela.x = x; estrela.y = y
+		group:insert(estrela)
+	end
+
 	background = display.newImageRect( "novasImagens/ganhou.png", display.contentWidth, display.contentHeight )
 	background:setReferencePoint( display.TopLeftReferencePoint )
 	background.x, background.y = 0, 0
 
-	local textScore = display.newText(scoreFase.."pts", display.contentWidth*0.2,
-	display.contentHeight *0.3, "Ravie", 30)
-	textScore:setTextColor(218, 165, 32)
+
+	local gradient = graphics.newGradient( { 255, 255, 0 }, {218, 165, 32 }, "down" )
+	--local textScore = display.newText("455 pts", display.contentWidth*0.25,
+	local textScore = display.newText(scoreFase.."pts", display.contentWidth*0.25,
+	display.contentHeight *0.2, "Ravie", 30)
+	textScore:setTextColor(gradient)
+	novaEstrela(display.contentWidth*0.5,display.contentHeight*0.2)
+
+	local backBtn = display.newImageRect ("novasImagens/setaVermelha.gif", 70, 70 )
+	backBtn:setReferencePoint( display.CenterReferencePoint )
+	backBtn.x = display.contentWidth*0.3
+	backBtn.y = display.contentHeight*0.8
+	backBtn:addEventListener("tap", denovo)
 	
-
-	playBtnTentarNovamente = widget.newButton{
-		label="RETURN",
-		labelColor = { default={255}, over={128} },
-		defaultFile="imagens/buttonRed.png",
-		overFile="imagens/buttonRedOver.png",
-		width=100, height=50,
-		onRelease = denovo
-	}
-	playBtnTentarNovamente:setReferencePoint( display.CenterReferencePoint )
-	playBtnTentarNovamente.x = display.contentWidth*0.3
-	playBtnTentarNovamente.y = display.contentHeight *0.8
-
-	playBtn = widget.newButton{
-		label="NEXT",
-		labelColor = { default={255}, over={128} },
-		defaultFile="imagens/button.png",
-		overFile="imagens/buttonOver.png",
-		width=100, height=50,
-		onRelease = proximaFase	
-	}
+	playBtn = display.newImageRect ("novasImagens/setaVerde.gif", 70, 70 )
 	playBtn:setReferencePoint( display.CenterReferencePoint )
 	playBtn.x = display.contentWidth*0.7
 	playBtn.y = display.contentHeight *0.8
+	playBtn:addEventListener("tap", proximaFase)
 
 	group:insert( background )
 	group:insert( textScore )
 	group:insert( playBtn )
-	group:insert( playBtnTentarNovamente )
+	group:insert( backBtn )
 	
+	novaEstrela(display.contentWidth*0.3,display.contentHeight*0.13)
+	novaEstrela(display.contentWidth*0.47,display.contentHeight*0.1)
+	novaEstrela(display.contentWidth*0.64,display.contentHeight*0.13)
+
 	return true	
 
 end

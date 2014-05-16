@@ -23,26 +23,30 @@ function scene:createScene( event )
 	background:setReferencePoint( display.TopLeftReferencePoint )
 	background.x, background.y = 0, 0
 	font = "Ravie"
-	
-	local gradient = graphics.newGradient(  {  0, 128, 0 }, {  0, 128, 0 }, "down" )
-	local backBtn = display.newText(  "> Levels", 0, 0, font, 25 )
-	backBtn:setTextColor( gradient)
+
+	local ninho = display.newImage("novasImagens/ninho.png")
+	ninho:setReferencePoint( display.CenterReferencePoint )
+	ninho.x = display.contentWidth*0.3
+	ninho.y = display.contentHeight*0.88	
+
+	local backBtn = display.newImageRect ("novasImagens/setaVerde.gif", 70, 70 )
 	backBtn:setReferencePoint( display.CenterReferencePoint )
-	backBtn.x = display.contentWidth*0.51
-	backBtn.y = display.contentHeight*0.86
+	backBtn.x = display.contentWidth*0.82
+	backBtn.y = display.contentHeight*0.91
 	backBtn:addEventListener("tap", fases)
 
-	gradient = graphics.newGradient( { 138, 43, 226}, {  0, 0, 255 }, "down" )
-	local creditsBtn = display.newText(  "> Credits", 0, 0, font, 20 )
+	local gradient = graphics.newGradient( { 0, 0, 255}, {  0, 0, 0 }, "down" )
+	local creditsBtn = display.newText(  "Credits", 0, 0, font, 15 )
 	creditsBtn:setTextColor(gradient )
 	creditsBtn:setReferencePoint( display.CenterReferencePoint )
-	creditsBtn.x = display.contentWidth*0.5
-	creditsBtn.y = display.contentHeight*0.92
+	creditsBtn.x = display.contentWidth*0.78
+	creditsBtn.y = display.contentHeight*0.23
 	creditsBtn:addEventListener("tap", creditos)
 	
 	group:insert( background )
 	group:insert( creditsBtn )
 	group:insert( backBtn )
+	group:insert( ninho )
 
 end
 

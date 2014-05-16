@@ -55,11 +55,16 @@ function scene:createScene( event )
 	title.y = display.contentHeight*0.55
 	group:insert( title )
 
-	local backBtn = display.newText(  "< Back", 0, 0, font, 25 )
-	backBtn:setTextColor( {0.8, 0.8, 0.8} )
+	title = display.newImage("novasImagens/ninhoGalinha.png" )
+	title:setReferencePoint( display.CenterReferencePoint )
+	title.x = display.contentWidth*0.64
+	title.y = display.contentHeight*0.74
+	group:insert( title )
+
+	local backBtn = display.newImageRect ("novasImagens/setaAzul.gif", 70, 70 )
 	backBtn:setReferencePoint( display.CenterReferencePoint )
-	backBtn.x = display.contentWidth*0.5
-	backBtn.y = display.contentHeight*0.7
+	backBtn.x = display.contentWidth*0.2
+	backBtn.y = display.contentHeight*0.9
 	backBtn.destination = "menu" 
 	backBtn:addEventListener("tap", buttonHit)
 	group:insert( backBtn )
